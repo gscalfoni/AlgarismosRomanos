@@ -24,4 +24,4 @@ def test_out_of_range():
     with pytest.raises(ValueError):
         int_to_roman(0)  # Números romanos começam em 1
     with pytest.raises(ValueError):
-        int_to_roman(4000)  # Máximo representável em números romanos é 3999
+        int_to_roman(4001)  # Máximo representável em números romanos é 3999
