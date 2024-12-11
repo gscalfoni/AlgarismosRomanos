@@ -28,12 +28,12 @@ jobs:
 
     - name: Run tests
       run: |
+        set -e  # Isso vai fazer o fluxo parar caso algum comando falhe
         pytest --cov=.
-      continue-on-error: false  
 
-    
+    # Commit changes (isso só será executado se os testes passarem)
     - name: Commit changes
-      if: success()  
+      if: success()  # Isso garante que o commit só será feito se os testes passarem
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
