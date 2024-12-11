@@ -32,12 +32,4 @@ jobs:
     # Passo 4: Roda os testes
     - name: Run tests
       run: pytest --cov=.
-
-    - name: Commit changes
-      if: success()  # Isso garante que o commit só será feito se os testes passarem
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add .
-        git commit -m "Add coverage report"
-        git push
+      continue-on-error: false
